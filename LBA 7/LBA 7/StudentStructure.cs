@@ -12,7 +12,7 @@ namespace LBA_7
         string name;
         string gender;
         double mobile;
-        public Student(int roll, string name, string gender, double mobile)
+        public Student (int roll, string name, string gender, double mobile)
         {
             this.roll = roll;
             this.name = name;
@@ -30,34 +30,22 @@ namespace LBA_7
     {
         static void Main ()
         {
-            String c = "";
             String sname, sgen;
             Double smob;
             int sroll;
-            Student stud = new Student();
 
+            Console.Write("ENTER ROLL = ");
+            sroll = Convert.ToInt32(Console.ReadLine());
+            Console.Write("ENTER NAME = ");
+            sname = Console.ReadLine();
+            Console.Write("ENTER GENDER = ");
+            sgen = Console.ReadLine();
+            Console.Write("ENTER MOBILE NUMBER = ");
+            smob = Convert.ToDouble(Console.ReadLine());
+            Student ob = new Student(sroll, sname, sgen, smob);
 
-            while(c != "EXIT")
-            {
-                Console.Write("ADD/VIEW ENTER CHOICE = ");
-                c = Console.ReadLine();
-                if (c == "ADD")
-                {
-                    Console.Write("ENTER ROLL = ");
-                    sroll = Convert.ToInt32(Console.ReadLine());
-                    Console.Write("ENTER NAME = ");
-                    sname = Console.ReadLine();
-                    Console.Write("ENTER GENDER = ");
-                    sgen = Console.ReadLine();
-                    Console.Write("ENTER MOBILE NUMBER = ");
-                    smob = Convert.ToDouble(Console.ReadLine());
-                    Student ob = new Student(sroll, sname, sgen, smob);
-                }
-                else if (c == "VIEW")
-                {
-                    Console.WriteLine(stud.Display());
-                }               
-            }
+            Console.WriteLine(ob.Display());
+                      
             Console.ReadLine();
         }
         
